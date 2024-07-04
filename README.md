@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-<strong>Revolt</strong> is a fully open-source diff drive robot designed for research and educational purposes.
+<strong>ReVolt</strong> is a test differential drive robot designed for research and development.
 It is fully integrated with ROS 2 and it is a great base platform to continuously develop my skills in mobile robotics.
 </p>
 
