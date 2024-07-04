@@ -10,8 +10,7 @@
 
 <p align="center">
 <strong>Revolt</strong> is a fully open-source diff drive robot designed for research and educational purposes.
-It is fully integrated with ROS 2 and it is a great base platform to improve my skills on the field of robotics.
-With its open-source design, anyone can modify and customize the robot to suit their specific needs.
+It is fully integrated with ROS 2 and it is a great base platform to continuously develop my skills in mobile robotics.
 </p>
 
 <p align="center">
