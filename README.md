@@ -10,7 +10,7 @@
 
 <p align="center">
 <strong>ReVolt</strong> is a test differential drive robot designed for research and development.
-It is fully integrated with ROS 2 and it is a great base platform for my continuously my continuous learning and development in the field of mobile robotics.
+It is fully integrated with ROS 2 and it is a great base platform for my continuous learning and development in the field of mobile robotics.
 </p>
 
 <p align="center">
