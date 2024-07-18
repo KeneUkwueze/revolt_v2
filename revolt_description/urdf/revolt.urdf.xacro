@@ -308,7 +308,7 @@
     <link name="left_wheel">
         <visual>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 -6.0896070622529636293e-33 0" />
+                rpy="-1.570796326794896558 -6.0896070622529636293e-33 0" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
             </geometry>
@@ -319,14 +319,14 @@
         </visual>
         <collision>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 -6.0896070622529636293e-33 0" />
+                rpy="-1.570796326794896558 -6.0896070622529636293e-33 0" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
             </geometry>
         </collision>
         <visual>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
-                rpy="-1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
+                rpy="1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
             </geometry>
@@ -337,7 +337,7 @@
         </visual>
         <collision>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
-                rpy="-1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
+                rpy="1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
             </geometry>
@@ -353,9 +353,9 @@
         </inertial>
     </link>
 
-    <joint name="left_wheel" type="continuous">
+    <joint name="left_wheel_joint" type="continuous">
         <origin xyz="-2.5283525075024694638e-17 -0.094499999999999917399 5.2041704279304212832e-18"
-            rpy="-1.570796326794896558 -0 8.3597150366120441552e-17" />
+            rpy="1.570796326794896558 0 8.3597150366120441552e-17" />
         <parent link="chassis" />
         <child link="left_wheel" />
         <axis xyz="0 0 1" />
@@ -369,7 +369,7 @@
     <link name="right_wheel">
         <visual>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 2.3592239273284571554e-16 0" />
+                rpy="-1.570796326794896558 2.3592239273284571554e-16 0" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
             </geometry>
@@ -380,14 +380,14 @@
         </visual>
         <collision>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 2.3592239273284571554e-16 0" />
+                rpy="-1.570796326794896558 2.3592239273284571554e-16 0" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
             </geometry>
         </collision>
         <visual>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 5.5760257437813084088e-33 0" />
+                rpy="-1.570796326794896558 5.5760257437813084088e-33 0" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
             </geometry>
@@ -398,7 +398,7 @@
         </visual>
         <collision>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 5.5760257437813084088e-33 0" />
+                rpy="-1.570796326794896558 5.5760257437813084088e-33 0" />
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
             </geometry>
@@ -414,12 +414,12 @@
         </inertial>
     </link>
 
-    <joint name="right_wheel" type="continuous">
+    <joint name="right_wheel_joint" type="continuous">
         <origin xyz="-5.9717925247838849906e-17 0.094499999999999431677 5.2041704279304212832e-18"
-            rpy="-1.570796326794896558 -0 3.141592653589793116" />
+            rpy="1.570796326794896558 -0 3.141592653589793116" />
         <parent link="chassis" />
         <child link="right_wheel" />
-        <axis xyz="0 0 1" />
+        <axis xyz="0 0 -1" />
         <limit effort="1" velocity="20" />
         <joint_properties friction="0.0" />
     </joint>
@@ -440,13 +440,6 @@
                     rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
             </material>
         </visual>
-        <!-- <collision>
-    <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
-        rpy="1.570796326794896336 -0 -2.8513139455734266103e-43" />
-    <geometry>
-        <mesh filename="file://$(find revolt_description)/meshes/caster_punch_bracket.stl" />
-    </geometry>
-</collision> -->
         <inertial>
             <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
                 rpy="0 0 0" />
@@ -519,13 +512,6 @@
                     rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
             </material>
         </visual>
-        <!-- <collision>
-    <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
-        rpy="1.570796326794896336 -0 -1.1046173050810472067e-44" />
-    <geometry>
-        <mesh filename="file://$(find revolt_description)/meshes/caster_punch_bracket.stl" />
-    </geometry>
-</collision> -->
         <inertial>
             <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
                 rpy="0 0 0" />
