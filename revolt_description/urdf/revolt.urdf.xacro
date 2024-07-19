@@ -2,19 +2,22 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="revolt">
 
 
+    <xacro:property name="package_name" value="revolt_description" />
+    <xacro:property name="robot_name" value="revolt" />
+
+    <xacro:include filename="$(find ${package_name})/urdf/include/materials.urdf.xacro" />
+
     <!-- ................................ BASE LINK .................................. -->
 
-    <link name="base_footprint"/>
+    <link name="base_footprint" />
 
-    <link name="base_link"/>
+    <link name="base_link" />
 
-        <joint name="base_joint" type="fixed">
-            <parent link="base_footprint" />
-            <child link="base_link" />
-            <origin xyz="0 0 0.0379" rpy="0 0 0" />
-        </joint>
-
-
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 0.0379" rpy="0 0 0" />
+    </joint>
 
 
     <!-- ................................ CHASSIS .................................. -->
@@ -27,10 +30,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/mouth.stl" />
             </geometry>
-            <material name="mouth_material">
-                <color
-                    rgba="0.18431372549019608975 0.18431372549019608975 0.18039215686274509554 1.0" />
-            </material>
+            <material name="black" />
         </visual>
 
         <visual>
@@ -40,10 +40,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/camera_deck.stl" />
             </geometry>
-            <material name="camera_deck_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="white" />
         </visual>
         <!-- Shapes for camera_deck -->
         <collision>
@@ -61,10 +58,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/caster_base_plate.stl" />
             </geometry>
-            <material name="caster_base_plate_material">
-                <color
-                    rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
-            </material>
+            <material name="black" />
         </visual>
 
         <visual>
@@ -74,10 +68,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/camera_holder_cover.stl" />
             </geometry>
-            <material name="camera_holder_cover_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="white" />
         </visual>
         <visual>
             <origin
@@ -86,10 +77,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/lidar_mount_cover.stl" />
             </geometry>
-            <material name="lidar_mount_cover_material">
-                <color
-                    rgba="0.15686274509803921351 0.16078431372549020772 0.16078431372549020772 1.0" />
-            </material>
+            <material name="black" />
         </visual>
         <visual>
             <origin
@@ -98,10 +86,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/body.stl" />
             </geometry>
-            <material name="body_material">
-                <color
-                    rgba="0.18431372549019608975 0.18431372549019608975 0.18039215686274509554 1.0" />
-            </material>
+            <material name="black" />
         </visual>
         <!-- Shapes for body -->
         <collision>
@@ -175,10 +160,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/face.stl" />
             </geometry>
-            <material name="face_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="white" />
         </visual>
         <visual>
             <origin xyz="-0.09903076211353280256 -0.0095000000205599927083 0.094246835314834992436"
@@ -186,10 +168,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/3_mm_screw.stl" />
             </geometry>
-            <material name="3_mm_screw_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="silver" />
         </visual>
         <visual>
             <origin xyz="-0.099030762113532844193 0.011199999979449953846 0.094246835314834992436"
@@ -197,10 +176,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/bolt.stl" />
             </geometry>
-            <material name="bolt_material">
-                <color
-                    rgba="0.85098039215686271941 0.7568627450980391913 0.87058823529411766273 1.0" />
-            </material>
+            <material name="silver" />
         </visual>
         <visual>
             <origin
@@ -209,10 +185,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/camera_mount_upper.stl" />
             </geometry>
-            <material name="camera_mount_upper_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="white" />
         </visual>
         <visual>
             <origin xyz="0.068999999999769093262 -2.0545637251490718116e-11 0.15974683531486091881"
@@ -220,10 +193,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/lidar.stl" />
             </geometry>
-            <material name="lidar_material">
-                <color
-                    rgba="0.43921568627450979783 0.43921568627450979783 0.43921568627450979783 1.0" />
-            </material>
+            <material name="dark_grey" />
         </visual>
         <visual>
             <origin
@@ -232,10 +202,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/caster_base_plate.stl" />
             </geometry>
-            <material name="caster_base_plate_material">
-                <color
-                    rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
-            </material>
+            <material name="black" />
         </visual>
         <visual>
             <origin
@@ -244,9 +211,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/lens.stl" />
             </geometry>
-            <material name="lens_material">
-                <color rgba="0 0 0 1.0" />
-            </material>
+            <material name="red" />
         </visual>
         <inertial>
             <origin
@@ -269,7 +234,7 @@
 
     <!-- ................................ IMU .................................. -->
 
-    <link name="imu"/>
+    <link name="imu" />
     <joint name="imu_frame" type="fixed">
         <origin xyz="0.003014671106491673136 -2.7204542826982439085e-05 0.084246835314834914166"
             rpy="3.877409121342316078e-26 2.0033280460268717061e-25 2.4319171015598684215e-16" />
@@ -281,7 +246,7 @@
 
     <!-- ................................ CAMERA .................................. -->
 
-    <link name="camera"/>
+    <link name="camera" />
     <joint name="camera_frame" type="fixed">
         <origin xyz="-0.10553981779667316598 -0.00016122176437623829642 0.12324683531484359467"
             rpy="1.3216940769347106485e-16 -1.5707963267935671769 0" />
@@ -293,7 +258,7 @@
 
     <!-- ................................ LIDAR .................................. -->
 
-    <link name="lidar"/>
+    <link name="lidar" />
     <joint name="lidar_frame" type="fixed">
         <origin xyz="0.068995117891150689604 0.00011464698805746520449 0.15024683531486093813"
             rpy="9.8371194238862312071e-14 -8.8439464137082285948e-14 0.042558116801597767331" />
@@ -312,10 +277,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
             </geometry>
-            <material name="wheel_material">
-                <color
-                    rgba="0.18431372549019608975 0.18431372549019608975 0.18039215686274509554 1.0" />
-            </material>
+            <material name="black" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
@@ -330,10 +292,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
             </geometry>
-            <material name="tire_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="white" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
@@ -373,10 +332,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
             </geometry>
-            <material name="tire_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="white" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
@@ -391,10 +347,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
             </geometry>
-            <material name="wheel_material">
-                <color
-                    rgba="0.18431372549019608975 0.18431372549019608975 0.18039215686274509554 1.0" />
-            </material>
+            <material name="black" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
@@ -425,7 +378,7 @@
     </joint>
 
 
-    <!-- ................................ CASTER WHEEL .................................. -->
+    <!-- ................................ FRONT CASTER WHEEL .................................. -->
 
 
     <link name="caster_punch_bracket">
@@ -435,10 +388,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/caster_punch_bracket.stl" />
             </geometry>
-            <material name="caster_punch_bracket_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="silver" />
         </visual>
         <inertial>
             <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
@@ -457,10 +407,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/caster_wheel.stl" />
             </geometry>
-            <material name="caster_wheel_material">
-                <color
-                    rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
-            </material>
+            <material name="black" />
         </visual>
         <collision>
             <origin xyz="0 0 8.6736173798840354721e-19"
@@ -500,6 +447,10 @@
         <joint_properties friction="0.0" />
     </joint>
 
+
+    <!-- ................................ BACK CASTER WHEEL .................................. -->
+
+
     <link name="caster_punch_bracket_2">
         <visual>
             <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
@@ -507,10 +458,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/caster_punch_bracket.stl" />
             </geometry>
-            <material name="caster_punch_bracket_material">
-                <color
-                    rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0" />
-            </material>
+            <material name="silver" />
         </visual>
         <inertial>
             <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
@@ -529,10 +477,7 @@
             <geometry>
                 <mesh filename="file://$(find revolt_description)/meshes/caster_wheel.stl" />
             </geometry>
-            <material name="caster_wheel_material">
-                <color
-                    rgba="0.49803921568627451677 0.49803921568627451677 0.49803921568627451677 1.0" />
-            </material>
+            <material name="black" />
         </visual>
         <collision>
             <origin xyz="0 0 8.6736173798840354721e-19"
