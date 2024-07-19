@@ -2,10 +2,39 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="revolt">
 
 
-    <xacro:property name="package_name" value="revolt_description" />
-    <xacro:property name="robot_name" value="revolt" />
+    <!-- <xacro:property name="package_name" value="revolt_description" />
+    <xacro:property name="robot_name" value="revolt" /> -->
 
-    <xacro:include filename="$(find ${package_name})/urdf/include/materials.urdf.xacro" />
+    <!-- <xacro:include filename="$(find ${package_name})/urdf/include/materials.urdf.xacro" /> -->
+
+        <!-- RVIZ material RGBA definition. -->
+
+
+  <material name="yellow">
+    <color rgba="1 0.95 0 1"/>
+  </material>
+  <material name="blue">
+    <color rgba="0 0 1 1"/>
+  </material>
+  <material name="light_blue">
+    <color rgba="0 0.5 0.8 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="silver">
+    <color rgba="0.79 0.82 0.93 1"/>
+  </material>
+  <material name="dark_grey">
+    <color rgba="0.3 0.3 0.3 1"/>
+  </material>
+
 
     <!-- ................................ BASE LINK .................................. -->
 
@@ -28,7 +57,7 @@
                 xyz="0.0010000000000000427384 -1.3877787807814456755e-17 0.034499999999999975131"
                 rpy="3.141592653589793116 -0 1.5992498330910002766e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/mouth.stl" />
+                <mesh filename="package://revolt_description/meshes/mouth.dae" />
             </geometry>
             <material name="black" />
         </visual>
@@ -38,7 +67,7 @@
                 xyz="0.0010000000000000572667 -2.0559984270640541126e-11 0.081246835314834925379"
                 rpy="3.877409121342316078e-26 2.0033280460268717061e-25 2.4319171015598684215e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/camera_deck.stl" />
+                <mesh filename="package://revolt_description/meshes/camera_deck.dae" />
             </geometry>
             <material name="white" />
         </visual>
@@ -56,7 +85,7 @@
                 xyz="-0.094939000879476515005 -2.5246608970075357092e-10 -0.0049999999999999983694"
                 rpy="-1.570796326794896558 -0 -1.570796326794896558" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_base_plate.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_base_plate.dae" />
             </geometry>
             <material name="black" />
         </visual>
@@ -66,7 +95,7 @@
                 xyz="0.00099999999998273778751 -0.00011057728351647477805 0.081207412577658427688"
                 rpy="2.1346669524422006952e-16 1.3293600162729647547e-12 1.3216940769347106485e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/camera_holder_cover.stl" />
+                <mesh filename="package://revolt_description/meshes/camera_holder_cover.dae" />
             </geometry>
             <material name="white" />
         </visual>
@@ -75,7 +104,7 @@
                 xyz="0.0010000000000000603025 -2.0559984270640541126e-11 0.081246835314834925379"
                 rpy="-8.2583008268328957817e-25 1.2527111174909710518e-26 1.3216940769347106485e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/lidar_mount_cover.stl" />
+                <mesh filename="package://revolt_description/meshes/lidar_mount_cover.dae" />
             </geometry>
             <material name="black" />
         </visual>
@@ -84,9 +113,8 @@
                 xyz="0.0010000000000000149828 -1.3877787807814456755e-17 0.034500000000000002887"
                 rpy="3.141592653589793116 -0 1.3216940769347106485e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/body.stl" />
+                <mesh filename="package://revolt_description/meshes/body.dae" />
             </geometry>
-            <material name="black" />
         </visual>
         <!-- Shapes for body -->
         <collision>
@@ -158,7 +186,7 @@
                 xyz="0.0010000000000000290774 -1.3877787807814456755e-17 0.034499999999999989009"
                 rpy="3.141592653589793116 -0 -6.9058515519838533453e-17" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/face.stl" />
+                <mesh filename="package://revolt_description/meshes/face.dae" />
             </geometry>
             <material name="white" />
         </visual>
@@ -166,7 +194,7 @@
             <origin xyz="-0.09903076211353280256 -0.0095000000205599927083 0.094246835314834992436"
                 rpy="1.57079632679489678 8.2036283484800396443e-22 2.4319171015598684215e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/3_mm_screw.stl" />
+                <mesh filename="package://revolt_description/meshes/screw.dae" />
             </geometry>
             <material name="silver" />
         </visual>
@@ -174,7 +202,7 @@
             <origin xyz="-0.099030762113532844193 0.011199999979449953846 0.094246835314834992436"
                 rpy="1.57079632679489678 -3.8851905562594939282e-25 2.4319171015598684215e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/bolt.stl" />
+                <mesh filename="package://revolt_description/meshes/bolt.dae" />
             </geometry>
             <material name="silver" />
         </visual>
@@ -183,7 +211,7 @@
                 xyz="0.00099999999998277378302 -0.0001500000205599955061 0.081246835314701948416"
                 rpy="2.1346669524422006952e-16 1.3293600162729647547e-12 1.3216940769347106485e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/camera_mount_upper.stl" />
+                <mesh filename="package://revolt_description/meshes/camera_mount_upper.dae" />
             </geometry>
             <material name="white" />
         </visual>
@@ -191,7 +219,7 @@
             <origin xyz="0.068999999999769093262 -2.0545637251490718116e-11 0.15974683531486091881"
                 rpy="-1.5707963267949949238 8.8439464137082285948e-14 -3.0990345367881952932" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/lidar.stl" />
+                <mesh filename="package://revolt_description/meshes/lidar.dae" />
             </geometry>
             <material name="dark_grey" />
         </visual>
@@ -200,18 +228,18 @@
                 xyz="0.097009446841797256078 -2.4932854392201164728e-10 -0.0049999999999999983694"
                 rpy="-1.570796326794896558 -0 -1.570796326794896558" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_base_plate.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_base_plate.dae" />
             </geometry>
-            <material name="black" />
+            <material name="black"/>
         </visual>
         <visual>
             <origin
                 xyz="0.00099999999998277942087 -0.0001500000205599955061 0.081246835314701948416"
                 rpy="2.1346669524422006952e-16 1.3293600162729647547e-12 1.3216940769347106485e-16" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/lens.stl" />
+                <mesh filename="package://revolt_description/meshes/lens.dae" />
             </geometry>
-            <material name="red" />
+            <material name="red"/>
         </visual>
         <inertial>
             <origin
@@ -275,7 +303,7 @@
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 -6.0896070622529636293e-33 0" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/wheel.dae" />
             </geometry>
             <material name="black" />
         </visual>
@@ -283,14 +311,14 @@
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 -6.0896070622529636293e-33 0" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/wheel.dae" />
             </geometry>
         </collision>
         <visual>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
                 rpy="1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
+                <mesh filename="package://revolt_description/meshes/tire.dae" />
             </geometry>
             <material name="white" />
         </visual>
@@ -298,7 +326,7 @@
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
                 rpy="1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
+                <mesh filename="package://revolt_description/meshes/tire.dae" />
             </geometry>
         </collision>
         <inertial>
@@ -330,7 +358,7 @@
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 2.3592239273284571554e-16 0" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
+                <mesh filename="package://revolt_description/meshes/tire.dae" />
             </geometry>
             <material name="white" />
         </visual>
@@ -338,14 +366,14 @@
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 2.3592239273284571554e-16 0" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/tire.stl" />
+                <mesh filename="package://revolt_description/meshes/tire.dae" />
             </geometry>
         </collision>
         <visual>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 5.5760257437813084088e-33 0" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/wheel.dae" />
             </geometry>
             <material name="black" />
         </visual>
@@ -353,7 +381,7 @@
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 5.5760257437813084088e-33 0" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/wheel.dae" />
             </geometry>
         </collision>
         <inertial>
@@ -386,7 +414,7 @@
             <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
                 rpy="1.570796326794896336 -0 -2.8513139455734266103e-43" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_punch_bracket.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_punch_bracket.dae" />
             </geometry>
             <material name="silver" />
         </visual>
@@ -405,7 +433,7 @@
             <origin xyz="0 0 8.6736173798840354721e-19"
                 rpy="0 2.8513139455734266103e-43 3.9877083809531582924e-48" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
             </geometry>
             <material name="black" />
         </visual>
@@ -413,7 +441,7 @@
             <origin xyz="0 0 8.6736173798840354721e-19"
                 rpy="0 2.8513139455734266103e-43 3.9877083809531582924e-48" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
             </geometry>
         </collision>
         <inertial>
@@ -456,7 +484,7 @@
             <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
                 rpy="1.570796326794896336 -0 -1.1046173050810472067e-44" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_punch_bracket.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_punch_bracket.dae" />
             </geometry>
             <material name="silver" />
         </visual>
@@ -475,7 +503,7 @@
             <origin xyz="0 0 8.6736173798840354721e-19"
                 rpy="0 -8.2173010960533594582e-33 -5.4231385880628728748e-48" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
             </geometry>
             <material name="black" />
         </visual>
@@ -483,7 +511,7 @@
             <origin xyz="0 0 8.6736173798840354721e-19"
                 rpy="0 -8.2173010960533594582e-33 -5.4231385880628728748e-48" />
             <geometry>
-                <mesh filename="file://$(find revolt_description)/meshes/caster_wheel.stl" />
+                <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
             </geometry>
         </collision>
         <inertial>
