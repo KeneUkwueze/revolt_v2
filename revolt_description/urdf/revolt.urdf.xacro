@@ -2,38 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="revolt">
 
 
-    <!-- <xacro:property name="package_name" value="revolt_description" />
-    <xacro:property name="robot_name" value="revolt" /> -->
-
-    <!-- <xacro:include filename="$(find ${package_name})/urdf/include/materials.urdf.xacro" /> -->
-
-        <!-- RVIZ material RGBA definition. -->
-
-
-  <material name="yellow">
-    <color rgba="1 0.95 0 1"/>
-  </material>
-  <material name="blue">
-    <color rgba="0 0 1 1"/>
-  </material>
-  <material name="light_blue">
-    <color rgba="0 0.5 0.8 1"/>
-  </material>
-  <material name="black">
-    <color rgba="0 0 0 1"/>
-  </material>
-  <material name="white">
-    <color rgba="1 1 1 1"/>
-  </material>
-  <material name="red">
-    <color rgba="0.8 0.0 0.0 1.0"/>
-  </material>
-  <material name="silver">
-    <color rgba="0.79 0.82 0.93 1"/>
-  </material>
-  <material name="dark_grey">
-    <color rgba="0.3 0.3 0.3 1"/>
-  </material>
+    <xacro:property name="package_name" value="revolt_description" />
+    <xacro:property name="robot_name" value="revolt" />
 
 
     <!-- ................................ BASE LINK .................................. -->
@@ -59,7 +29,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/mouth.dae" />
             </geometry>
-            <material name="black" />
         </visual>
 
         <visual>
@@ -69,7 +38,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/camera_deck.dae" />
             </geometry>
-            <material name="white" />
         </visual>
         <!-- Shapes for camera_deck -->
         <collision>
@@ -87,7 +55,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/caster_base_plate.dae" />
             </geometry>
-            <material name="black" />
         </visual>
 
         <visual>
@@ -97,7 +64,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/camera_holder_cover.dae" />
             </geometry>
-            <material name="white" />
         </visual>
         <visual>
             <origin
@@ -106,7 +72,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/lidar_mount_cover.dae" />
             </geometry>
-            <material name="black" />
         </visual>
         <visual>
             <origin
@@ -188,7 +153,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/face.dae" />
             </geometry>
-            <material name="white" />
         </visual>
         <visual>
             <origin xyz="-0.09903076211353280256 -0.0095000000205599927083 0.094246835314834992436"
@@ -196,7 +160,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/screw.dae" />
             </geometry>
-            <material name="silver" />
         </visual>
         <visual>
             <origin xyz="-0.099030762113532844193 0.011199999979449953846 0.094246835314834992436"
@@ -204,7 +167,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/bolt.dae" />
             </geometry>
-            <material name="silver" />
         </visual>
         <visual>
             <origin
@@ -213,7 +175,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/camera_mount_upper.dae" />
             </geometry>
-            <material name="white" />
         </visual>
         <visual>
             <origin xyz="0.068999999999769093262 -2.0545637251490718116e-11 0.15974683531486091881"
@@ -221,7 +182,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/lidar.dae" />
             </geometry>
-            <material name="dark_grey" />
         </visual>
         <visual>
             <origin
@@ -230,7 +190,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/caster_base_plate.dae" />
             </geometry>
-            <material name="black"/>
         </visual>
         <visual>
             <origin
@@ -239,7 +198,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/lens.dae" />
             </geometry>
-            <material name="red"/>
         </visual>
         <inertial>
             <origin
@@ -305,7 +263,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/wheel.dae" />
             </geometry>
-            <material name="black" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
@@ -320,7 +277,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/tire.dae" />
             </geometry>
-            <material name="white" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
@@ -360,7 +316,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/tire.dae" />
             </geometry>
-            <material name="white" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
@@ -375,7 +330,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/wheel.dae" />
             </geometry>
-            <material name="black" />
         </visual>
         <collision>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
@@ -416,7 +370,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/caster_punch_bracket.dae" />
             </geometry>
-            <material name="silver" />
         </visual>
         <inertial>
             <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
@@ -435,7 +388,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
             </geometry>
-            <material name="black" />
         </visual>
         <collision>
             <origin xyz="0 0 8.6736173798840354721e-19"
@@ -486,7 +438,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/caster_punch_bracket.dae" />
             </geometry>
-            <material name="silver" />
         </visual>
         <inertial>
             <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
@@ -505,7 +456,6 @@
             <geometry>
                 <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
             </geometry>
-            <material name="black" />
         </visual>
         <collision>
             <origin xyz="0 0 8.6736173798840354721e-19"
