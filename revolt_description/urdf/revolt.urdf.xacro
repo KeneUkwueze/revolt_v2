@@ -232,24 +232,24 @@
 
     <!-- ................................ CAMERA .................................. -->
 
-    <link name="camera" />
-    <joint name="camera_frame" type="fixed">
+    <link name="camera_link" />
+    <joint name="camera_joint" type="fixed">
         <origin xyz="-0.10553981779667316598 -0.00016122176437623829642 0.12324683531484359467"
             rpy="1.3216940769347106485e-16 -1.5707963267935671769 0" />
         <parent link="chassis" />
-        <child link="camera" />
+        <child link="camera_link" />
         <axis xyz="0 0 0" />
     </joint>
 
 
     <!-- ................................ LIDAR .................................. -->
 
-    <link name="lidar" />
-    <joint name="lidar_frame" type="fixed">
+    <link name="rplidar_laser_link" />
+    <joint name="rplidar_laser_joint" type="fixed">
         <origin xyz="0.068995117891150689604 0.00011464698805746520449 0.15024683531486093813"
             rpy="9.8371194238862312071e-14 -8.8439464137082285948e-14 0.042558116801597767331" />
         <parent link="chassis" />
-        <child link="lidar" />
+        <child link="rplidar_laser_link" />
         <axis xyz="0 0 0" />
     </joint>
 
@@ -407,7 +407,7 @@
         </inertial>
     </link>
 
-    <joint name="front_casterwheel" type="continuous">
+    <joint name="frontcaster_wheel_joint" type="continuous">
         <origin xyz="0.013500000000000025868 3.1212253173671393473e-18 -0.017000000000000001221"
             rpy="-1.570796326794896336 -0 3.141592653589793116" />
         <parent link="caster_punch_bracket" />
@@ -417,7 +417,7 @@
         <joint_properties friction="0.0" />
     </joint>
 
-    <joint name="frontcasterpuch" type="continuous">
+    <joint name="frontcaster_rotation_joint" type="continuous">
         <origin xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0080000000000000001665"
             rpy="0 -0 -3.141592653589793116" />
         <parent link="chassis" />
@@ -475,7 +475,7 @@
         </inertial>
     </link>
 
-    <joint name="back_casterwheel" type="continuous">
+    <joint name="backcaster_wheel_joint" type="continuous">
         <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
             rpy="1.570796326794896336 -0 -3.4594555838018703633e-45" />
         <parent link="caster_punch_bracket_2" />
@@ -485,7 +485,7 @@
         <joint_properties friction="0.0" />
     </joint>
 
-    <joint name="backcasterpunch" type="continuous">
+    <joint name="backcaster_rotation_joint" type="continuous">
         <origin xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0080000000000000001665"
             rpy="0 -0 1.3216940769347106485e-16" />
         <parent link="chassis" />

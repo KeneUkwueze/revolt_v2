@@ -10,7 +10,10 @@ endif()
 
 install(
   DIRECTORY
-  
+    launch
+    rviz
+    urdf
+    world
   DESTINATION
     share/${PROJECT_NAME}/
 )
