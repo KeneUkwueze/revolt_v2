@@ -418,7 +418,7 @@
     </joint>
 
     <joint name="frontcaster_rotation_joint" type="continuous">
-        <origin xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0080000000000000001665"
+        <origin xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0082499999999999969191"
             rpy="0 -0 -3.141592653589793116" />
         <parent link="chassis" />
         <child link="caster_punch_bracket" />
@@ -486,7 +486,7 @@
     </joint>
 
     <joint name="backcaster_rotation_joint" type="continuous">
-        <origin xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0080000000000000001665"
+        <origin xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0082499999999999969191"
             rpy="0 -0 1.3216940769347106485e-16" />
         <parent link="chassis" />
         <child link="caster_punch_bracket_2" />
