@@ -22,24 +22,16 @@
     <!-- ................................ CHASSIS .................................. -->
 
     <link name="chassis">
+        
         <visual>
             <origin
-                xyz="0.0010000000000000427384 -1.3877787807814456755e-17 0.034499999999999975131"
-                rpy="3.141592653589793116 -0 1.5992498330910002766e-16" />
+                xyz="0.0010000000000000149828 -1.3877787807814456755e-17 0.034500000000000002887"
+                rpy="3.141592653589793116 -0 1.3216940769347106485e-16" />
             <geometry>
-                <mesh filename="package://revolt_description/meshes/mouth.dae" />
+                <mesh filename="package://revolt_description/meshes/revolt_chassis.dae" />
             </geometry>
         </visual>
-
-        <visual>
-            <origin
-                xyz="0.0010000000000000572667 -2.0559984270640541126e-11 0.081246835314834925379"
-                rpy="3.877409121342316078e-26 2.0033280460268717061e-25 2.4319171015598684215e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/camera_deck.dae" />
-            </geometry>
-        </visual>
-        <!-- Shapes for camera_deck -->
+         <!-- simplified collisions -->
         <collision>
             <origin
                 xyz="0.0010005000000000577667 -2.0002055999002095288e-07 0.082746835314834926711"
@@ -48,40 +40,6 @@
                 <box size="0.24927900000000000058 0.19929299999999999793 0.0030000000000000000625" />
             </geometry>
         </collision>
-        <visual>
-            <origin
-                xyz="-0.094939000879476515005 -2.5246608970075357092e-10 -0.0049999999999999983694"
-                rpy="-1.570796326794896558 -0 -1.570796326794896558" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/caster_base_plate.dae" />
-            </geometry>
-        </visual>
-
-        <visual>
-            <origin
-                xyz="0.00099999999998273778751 -0.00011057728351647477805 0.081207412577658427688"
-                rpy="2.1346669524422006952e-16 1.3293600162729647547e-12 1.3216940769347106485e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/camera_holder_cover.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin
-                xyz="0.0010000000000000603025 -2.0559984270640541126e-11 0.081246835314834925379"
-                rpy="-8.2583008268328957817e-25 1.2527111174909710518e-26 1.3216940769347106485e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/lidar_mount_cover.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin
-                xyz="0.0010000000000000149828 -1.3877787807814456755e-17 0.034500000000000002887"
-                rpy="3.141592653589793116 -0 1.3216940769347106485e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/body.dae" />
-            </geometry>
-        </visual>
-        <!-- Shapes for body -->
         <collision>
             <origin
                 xyz="0.0010000000000000149828 -1.3877787807814456755e-17 -0.014499999999999999001"
@@ -146,59 +104,6 @@
                 <box size="0.083955299999999996596 0.099612599999999995593 0.0020000000000000000416" />
             </geometry>
         </collision>
-        <visual>
-            <origin
-                xyz="0.0010000000000000290774 -1.3877787807814456755e-17 0.034499999999999989009"
-                rpy="3.141592653589793116 -0 -6.9058515519838533453e-17" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/face.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin xyz="-0.09903076211353280256 -0.0095000000205599927083 0.094246835314834992436"
-                rpy="1.57079632679489678 8.2036283484800396443e-22 2.4319171015598684215e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/screw.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin xyz="-0.099030762113532844193 0.011199999979449953846 0.094246835314834992436"
-                rpy="1.57079632679489678 -3.8851905562594939282e-25 2.4319171015598684215e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/bolt.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin
-                xyz="0.00099999999998277378302 -0.0001500000205599955061 0.081246835314701948416"
-                rpy="2.1346669524422006952e-16 1.3293600162729647547e-12 1.3216940769347106485e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/camera_mount_upper.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin xyz="0.068999999999769093262 -2.0545637251490718116e-11 0.15974683531486091881"
-                rpy="-1.5707963267949949238 8.8439464137082285948e-14 -3.0990345367881952932" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/lidar.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin
-                xyz="0.097009446841797256078 -2.4932854392201164728e-10 -0.0049999999999999983694"
-                rpy="-1.570796326794896558 -0 -1.570796326794896558" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/caster_base_plate.dae" />
-            </geometry>
-        </visual>
-        <visual>
-            <origin
-                xyz="0.00099999999998277942087 -0.0001500000205599955061 0.081246835314701948416"
-                rpy="2.1346669524422006952e-16 1.3293600162729647547e-12 1.3216940769347106485e-16" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/lens.dae" />
-            </geometry>
-        </visual>
         <inertial>
             <origin
                 xyz="0.0035619083245137942231 -3.5819939158716627821e-06 0.028737618229734977066"
@@ -261,28 +166,14 @@
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 -6.0896070622529636293e-33 0" />
             <geometry>
-                <mesh filename="package://revolt_description/meshes/wheel.dae" />
+                <mesh filename="package://revolt_description/meshes/left_wheel.dae" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 -6.0896070622529636293e-33 0" />
             <geometry>
-                <mesh filename="package://revolt_description/meshes/wheel.dae" />
-            </geometry>
-        </collision>
-        <visual>
-            <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/tire.dae" />
-            </geometry>
-        </visual>
-        <collision>
-            <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
-                rpy="1.570796326794896558 1.9428902930940190154e-16 3.141592653589793116" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/tire.dae" />
+                <mesh filename="package://revolt_description/meshes/left_wheel.dae" />
             </geometry>
         </collision>
         <inertial>
@@ -312,30 +203,16 @@
     <link name="right_wheel">
         <visual>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
-                rpy="-1.570796326794896558 2.3592239273284571554e-16 0" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/tire.dae" />
-            </geometry>
-        </visual>
-        <collision>
-            <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
-                rpy="-1.570796326794896558 2.3592239273284571554e-16 0" />
-            <geometry>
-                <mesh filename="package://revolt_description/meshes/tire.dae" />
-            </geometry>
-        </collision>
-        <visual>
-            <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 5.5760257437813084088e-33 0" />
             <geometry>
-                <mesh filename="package://revolt_description/meshes/wheel.dae" />
+                <mesh filename="package://revolt_description/meshes/right_wheel.dae" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
                 rpy="-1.570796326794896558 5.5760257437813084088e-33 0" />
             <geometry>
-                <mesh filename="package://revolt_description/meshes/wheel.dae" />
+                <mesh filename="package://revolt_description/meshes/right_wheel.dae" />
             </geometry>
         </collision>
         <inertial>
