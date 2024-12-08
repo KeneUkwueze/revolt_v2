@@ -22,7 +22,7 @@
     <!-- ................................ CHASSIS .................................. -->
 
     <link name="chassis">
-        
+
         <visual>
             <origin
                 xyz="0.0010000000000000149828 -1.3877787807814456755e-17 0.034500000000000002887"
@@ -31,7 +31,7 @@
                 <mesh filename="package://revolt_description/meshes/revolt_chassis.dae" />
             </geometry>
         </visual>
-         <!-- simplified collisions -->
+        <!-- simplified collisions -->
         <collision>
             <origin
                 xyz="0.0010005000000000577667 -2.0002055999002095288e-07 0.082746835314834926711"
@@ -284,25 +284,52 @@
         </inertial>
     </link>
 
-    <joint name="frontcaster_wheel_joint" type="continuous">
-        <origin xyz="0.013500000000000025868 3.1212253173671393473e-18 -0.017000000000000001221"
-            rpy="-1.570796326794896336 -0 3.141592653589793116" />
-        <parent link="caster_punch_bracket" />
-        <child link="caster_wheel" />
-        <axis xyz="0 0 1" />
-        <limit effort="1" velocity="20" />
-        <joint_properties friction="0.0" />
-    </joint>
+    <xacro:if value="$(arg use_real_ros_control)">
+        <joint name="frontcaster_wheel_joint" type="fixed">
+            <origin xyz="0.013500000000000025868 3.1212253173671393473e-18 -0.017000000000000001221"
+                rpy="-1.570796326794896336 -0 3.141592653589793116" />
+            <parent link="caster_punch_bracket" />
+            <child link="caster_wheel" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
 
-    <joint name="frontcaster_rotation_joint" type="continuous">
-        <origin xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0082499999999999969191"
-            rpy="0 -0 -3.141592653589793116" />
-        <parent link="chassis" />
-        <child link="caster_punch_bracket" />
-        <axis xyz="0 0 1" />
-        <limit effort="1" velocity="20" />
-        <joint_properties friction="0.0" />
-    </joint>
+        <joint name="frontcaster_rotation_joint" type="fixed">
+            <origin
+                xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0082499999999999969191"
+                rpy="0 -0 -3.141592653589793116" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+    </xacro:if>
+
+    <xacro:unless value="$(arg use_real_ros_control)">
+        <joint name="frontcaster_wheel_joint" type="continuous">
+            <origin xyz="0.013500000000000025868 3.1212253173671393473e-18 -0.017000000000000001221"
+                rpy="-1.570796326794896336 -0 3.141592653589793116" />
+            <parent link="caster_punch_bracket" />
+            <child link="caster_wheel" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="frontcaster_rotation_joint" type="continuous">
+            <origin
+                xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0082499999999999969191"
+                rpy="0 -0 -3.141592653589793116" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+    </xacro:unless>
 
 
     <!-- ................................ BACK CASTER WHEEL .................................. -->
@@ -352,25 +379,56 @@
         </inertial>
     </link>
 
-    <joint name="backcaster_wheel_joint" type="continuous">
-        <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
-            rpy="1.570796326794896336 -0 -3.4594555838018703633e-45" />
-        <parent link="caster_punch_bracket_2" />
-        <child link="caster_wheel_2" />
-        <axis xyz="0 0 1" />
-        <limit effort="1" velocity="20" />
-        <joint_properties friction="0.0" />
-    </joint>
+    <xacro:if value="$(arg use_real_ros_control)">
+        <joint name="backcaster_wheel_joint" type="fixed">
+            <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
+                rpy="1.570796326794896336 -0 -3.4594555838018703633e-45" />
+            <parent link="caster_punch_bracket_2" />
+            <child link="caster_wheel_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
 
-    <joint name="backcaster_rotation_joint" type="continuous">
-        <origin xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0082499999999999969191"
-            rpy="0 -0 1.3216940769347106485e-16" />
-        <parent link="chassis" />
-        <child link="caster_punch_bracket_2" />
-        <axis xyz="0 0 1" />
-        <limit effort="1" velocity="20" />
-        <joint_properties friction="0.0" />
-    </joint>
+        <joint name="backcaster_rotation_joint" type="fixed">
+            <origin
+                xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0082499999999999969191"
+                rpy="0 -0 1.3216940769347106485e-16" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+    </xacro:if>
 
+    <xacro:unless value="$(arg use_real_ros_control)">
+        <joint name="backcaster_wheel_joint" type="continuous">
+            <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
+                rpy="1.570796326794896336 -0 -3.4594555838018703633e-45" />
+            <parent link="caster_punch_bracket_2" />
+            <child link="caster_wheel_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="backcaster_rotation_joint" type="continuous">
+            <origin
+                xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0082499999999999969191"
+                rpy="0 -0 1.3216940769347106485e-16" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+    </xacro:unless>
+
+
+    <!-- ros2_control -->
+    <xacro:if value="$(arg use_real_ros_control)">
+        <xacro:include filename="$(find ${package_name})/urdf/include/revolt_control.urdf.xacro" />
+    </xacro:if>
 
 </robot>
