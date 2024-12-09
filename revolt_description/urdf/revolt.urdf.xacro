@@ -5,6 +5,10 @@
     <xacro:property name="package_name" value="revolt_description" />
     <xacro:property name="robot_name" value="revolt" />
 
+    <xacro:arg name="use_real_ros_control" default="false" />
+
+
+
 
     <!-- ................................ BASE LINK .................................. -->
 
@@ -137,11 +141,33 @@
 
     <!-- ................................ CAMERA .................................. -->
 
+
+    <link name="camera_mount">
+        <visual>
+            <origin xyz="0.10003076211353316427 -0.013039422737043504519 -3.9422737043501517344e-05"
+                rpy="-1.5707963267948970021 -2.1130201991908125724e-32 -9.9510893136977499032e-54" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/camera_mount.dae" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="camera_mount" type="fixed">
+        <origin xyz="-0.099030762113532788682 -2.0560008597292656995e-11 0.094246835314834839781"
+            rpy="1.570796326794896558 -2.0033280460268570124e-25 2.4319171023353502458e-16" />
+        <parent link="chassis" />
+        <child link="camera_mount" />
+        <axis xyz="0 0 1" />
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0" />
+    </joint>
+
+
     <link name="camera_link" />
     <joint name="camera_joint" type="fixed">
-        <origin xyz="-0.10553981779667316598 -0.00016122176437623829642 0.12324683531484359467"
-            rpy="1.3216940769347106485e-16 -1.5707963267935671769 0" />
-        <parent link="chassis" />
+        <origin xyz="-0.0065090556831789159187 0.028999999999999984124 1.1221743816224209809e-05"
+            rpy="-1.570796326794896558 3.2526065174728515974e-16 1.570796326794896558" />
+        <parent link="camera_mount" />
         <child link="camera_link" />
         <axis xyz="0 0 0" />
     </joint>
