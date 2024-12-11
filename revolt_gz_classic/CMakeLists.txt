@@ -10,6 +10,7 @@ endif()
 
 install(
   DIRECTORY
+    config
     launch
     rviz
     urdf

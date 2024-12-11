@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="revolt">
+
+
+    <xacro:property name="package_name" value="revolt_description" />
+    <xacro:property name="robot_name" value="revolt" />
+
+
+    <!-- ................................ BASE LINK .................................. -->
+
+    <link name="base_footprint" />
+
+    <link name="base_link" />
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 0.0379" rpy="0 0 0" />
+    </joint>
+
+
+    <!-- ................................ CHASSIS .................................. -->
+
+    <link name="chassis">
+
+        <visual>
+            <origin
+                xyz="0.0010000000000000149828 -1.3877787807814456755e-17 0.034500000000000002887"
+                rpy="3.141592653589793116 -0 1.3216940769347106485e-16" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/revolt_chassis.dae" />
+            </geometry>
+        </visual>
+        <!-- simplified collisions -->
+        <collision>
+            <origin
+                xyz="0.0010005000000000577667 -2.0002055999002095288e-07 0.082746835314834926711"
+                rpy="-3.877409121342316078e-26 -2.0033280460268717061e-25 -3.141592653589793116" />
+            <geometry>
+                <box size="0.24927900000000000058 0.19929299999999999793 0.0030000000000000000625" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin
+                xyz="0.0010000000000000149828 -1.3877787807814456755e-17 -0.014499999999999999001"
+                rpy="3.141592653589793116 -0 -3.141592653589793116" />
+            <geometry>
+                <box size="0.14212600000000000233 0.16452699999999997882 0.0020000000000000000416" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.12449999999999962486 5.0000000000294362862e-07 0.034500000000000002887"
+                rpy="-1.570796326794896558 -0 -1.570796326794896558" />
+            <geometry>
+                <box size="0.20016100000000000558 0.10000000000000000555 0.0030000000000000000625" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.12249999999999959532 -5.0000000001682141643e-07 0.034500050000000004324"
+                rpy="-1.570796326794896558 -0 1.57079632679489678" />
+            <geometry>
+                <box size="0.2004070000000000018 0.099495299999999994855 0.0030000000000000000625" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.00045135000000001278698 0.098999999999999685474 0.06378895000000001092"
+                rpy="-1.570796326794896558 -0 4.0769347106295352723e-22" />
+            <geometry>
+                <box size="0.083071299999999986818 0.040414099999999994473 0.0020000000000000000416" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.082699499999999717681 0.098999999999999685474 0.034500000000000002887"
+                rpy="-1.570796326794896558 -0 4.0769347106295352723e-22" />
+            <geometry>
+                <box size="0.082917000000000004589 0.099797799999999992071 0.0020000000000000000416" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.083849049999999758498 0.098999999999999699352 0.034306300000000004846"
+                rpy="-1.570796326794896558 -0 4.0769347106295352723e-22" />
+            <geometry>
+                <box size="0.083871300000000009733 0.099612599999999995593 0.0020000000000000000416" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.00045145000000001414466 -0.098999999999999713229 0.06378899999999999848"
+                rpy="-1.570796326794896558 -0 -3.141592653589793116" />
+            <geometry>
+                <box size="0.082840099999999999847 0.04037840000000000179 0.0020000000000000000416" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.082699099999999706179 -0.098999999999999727107 0.034500000000000002887"
+                rpy="-1.570796326794896558 -0 -3.141592653589793116" />
+            <geometry>
+                <box size="0.083039199999999993573 0.10000000000000000555 0.0020000000000000000416" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.083849349999999753247 -0.098999999999999713229 0.034306300000000004846"
+                rpy="-1.570796326794896558 -0 -3.141592653589793116" />
+            <geometry>
+                <box size="0.083955299999999996596 0.099612599999999995593 0.0020000000000000000416" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin
+                xyz="0.0035619083245137942231 -3.5819939158716627821e-06 0.028737618229734977066"
+                rpy="0 0 0" />
+            <mass value="1.37541365667756188" />
+            <inertia ixx="0.0074546494857456293073" ixy="9.3739832173881354348e-07"
+                ixz="-0.00024696587687848359314" iyy="0.0085957720605103291739"
+                iyz="9.872940559510540863e-07" izz="0.011229185530590277478" />
+        </inertial>
+    </link>
+
+    <joint name="chassis_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="chassis" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+
+    </joint>
+
+
+    <!-- ................................ IMU .................................. -->
+
+    <link name="imu" />
+    <joint name="imu_frame" type="fixed">
+        <origin xyz="0.003014671106491673136 -2.7204542826982439085e-05 0.084246835314834914166"
+            rpy="3.877409121342316078e-26 2.0033280460268717061e-25 2.4319171015598684215e-16" />
+        <parent link="chassis" />
+        <child link="imu" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+
+    <!-- ................................ CAMERA .................................. -->
+
+     <link name="camera_mount">
+        <visual>
+            <origin xyz="0.10003076211353316427 -0.013039422737043504519 -3.9422737043501517344e-05"
+                rpy="-1.5707963267948970021 -2.1130201991908125724e-32 -9.9510893136977499032e-54" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/camera_mount.dae" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="camera_mount" type="revolute">
+        <origin xyz="-0.099030762113532788682 -2.0560008597292656995e-11 0.094246835314834839781"
+            rpy="1.570796326794896558 -2.0033280460268570124e-25 2.4319171023353502458e-16" />
+        <parent link="chassis" />
+        <child link="camera_mount" />
+        <axis xyz="0 0 1" />
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0" />
+    </joint>
+
+
+    <link name="camera_link" />
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="-0.0065090556831789159187 0.028999999999999984124 1.1221743816224209809e-05"
+            rpy="-1.570796326794896558 3.2526065174728515974e-16 1.570796326794896558" />
+        <parent link="camera_mount" />
+        <child link="camera_link" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+
+    <!-- ................................ LIDAR .................................. -->
+
+    <link name="rplidar_laser_link" />
+    <joint name="rplidar_laser_joint" type="fixed">
+        <origin xyz="0.068995117891150689604 0.00011464698805746520449 0.15024683531486093813"
+            rpy="9.8371194238862312071e-14 -8.8439464137082285948e-14 0.042558116801597767331" />
+        <parent link="chassis" />
+        <child link="rplidar_laser_link" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+
+    <!-- ................................ LEFT WHEEL .................................. -->
+
+    <link name="left_wheel">
+        <visual>
+            <origin xyz="-3.0364619563320692272e-19 -3.252606517456513302e-19 0"
+                rpy="-1.570796326794896558 -6.0896070622529636293e-33 0" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/left_wheel.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-3.0364619563320692272e-19 -3.2526065174565123391e-19 0"
+                rpy="3.141592653589793116 -6.6408783034815813825e-33 -7.7216700832587899582e-18" />
+            <geometry>
+                <cylinder length="0.014" radius="0.0378832" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin
+                xyz="-1.521330854137836883e-07 -2.0613620790072934315e-06 -7.8930583560674532967e-05"
+                rpy="0 0 0" />
+            <mass value="0.037841397954605116016" />
+            <inertia ixx="1.6973436542168538149e-05" ixy="-2.4534200353398101827e-10"
+                ixz="-2.4113466868023507071e-11" iyy="1.6973630599484165022e-05"
+                iyz="-1.606441819284268252e-10" izz="3.2950793612564670081e-05" />
+        </inertial>
+    </link>
+
+    <joint name="left_wheel_joint" type="continuous">
+        <origin xyz="-2.5283525075024694638e-17 -0.094499999999999917399 5.2041704279304212832e-18"
+            rpy="1.570796326794896558 0 8.3597150366120441552e-17" />
+        <parent link="chassis" />
+        <child link="left_wheel" />
+        <axis xyz="0 0 1" />
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0" />
+    </joint>
+
+
+    <!-- ................................ RIGHT WHEEL .................................. -->
+
+    <link name="right_wheel">
+        <visual>
+            <origin xyz="-3.0364619563319459676e-19 -3.252606517456513302e-19 0"
+                rpy="-1.570796326794896558 5.5760257437813084088e-33 0" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/right_wheel.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-3.0364619563321308569e-19 -3.252606517456513302e-19 0"
+                rpy="-3.141592653589793116 -5.6777790667003832702e-33 -7.8146296391822441833e-18" />
+            <geometry>
+                <cylinder length="0.014" radius="0.0378832" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin
+                xyz="-1.5213308545283286008e-07 -2.0613620790072934315e-06 -7.8937632198109502417e-05"
+                rpy="0 0 0" />
+            <mass value="0.037841397954605116016" />
+            <inertia ixx="1.6973436500060328056e-05" ixy="-2.4534200353397791635e-10"
+                ixz="-2.4113426285245354907e-11" iyy="1.6973630557375948152e-05"
+                iyz="-1.6064363210071301693e-10" izz="3.2950793612564710738e-05" />
+        </inertial>
+    </link>
+
+    <joint name="right_wheel_joint" type="continuous">
+        <origin xyz="-5.9717925247838849906e-17 0.094499999999999431677 5.2041704279304212832e-18"
+            rpy="1.570796326794896558 -0 3.141592653589793116" />
+        <parent link="chassis" />
+        <child link="right_wheel" />
+        <axis xyz="0 0 -1" />
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0" />
+    </joint>
+
+
+    <!-- ................................ FRONT CASTER WHEEL .................................. -->
+
+
+    <link name="caster_punch_bracket">
+        <visual>
+            <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
+                rpy="1.570796326794896336 -0 -2.8513139455734266103e-43" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/caster_punch_bracket.dae" />
+            </geometry>
+        </visual>
+        <inertial>
+            <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
+                rpy="0 0 0" />
+            <mass value="0.014764349810725824544" />
+            <inertia ixx="1.6947747057761994951e-06" ixy="-1.7157250353294732119e-08"
+                ixz="5.8578195048420969427e-07" iyy="1.7276290017100658618e-06"
+                iyz="1.9205936593639116448e-08" izz="1.887839334913929401e-06" />
+        </inertial>
+    </link>
+
+    <link name="caster_wheel">
+        <visual>
+            <origin xyz="0 0 8.6736173798840354721e-19"
+                rpy="0 2.8513139455734266103e-43 3.9877083809531582924e-48" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 8.6736178968719183177e-19"
+                rpy="3.141592653589793116 2.8513139455734266103e-43 3.9877083809531582924e-48" />
+            <geometry>
+                <cylinder length="0.013" radius="0.0127945" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin
+                xyz="-4.7249388413420183081e-19 -2.1879547323420878759e-19 1.5277146050762926199e-18"
+                rpy="0 0 0" />
+            <mass value="0.004477188791594997018" />
+            <inertia ixx="2.6913415982105394464e-07" ixy="8.1941462195960663794e-55"
+                ixz="-2.043740271738193537e-49" iyy="2.6913415982105405052e-07"
+                iyz="-3.0601115163453386514e-97" izz="4.4069974546829004994e-07" />
+        </inertial>
+    </link>
+
+    <!-- <xacro:if value="$(arg use_real_ros_control)">
+        <joint name="frontcaster_wheel_joint" type="fixed">
+            <origin xyz="0.013500000000000025868 3.1212253173671393473e-18 -0.017000000000000001221"
+                rpy="-1.570796326794896336 -0 3.141592653589793116" />
+            <parent link="caster_punch_bracket" />
+            <child link="caster_wheel" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="frontcaster_rotation_joint" type="fixed">
+            <origin
+                xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0082499999999999969191"
+                rpy="0 -0 -3.141592653589793116" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+    </xacro:if> -->
+
+    <!-- <xacro:unless value="$(arg use_real_ros_control)"> -->
+        <joint name="frontcaster_wheel_joint" type="continuous">
+            <origin xyz="0.013500000000000025868 3.1212253173671393473e-18 -0.017000000000000001221"
+                rpy="-1.570796326794896336 -0 3.141592653589793116" />
+            <parent link="caster_punch_bracket" />
+            <child link="caster_wheel" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="frontcaster_rotation_joint" type="continuous">
+            <origin
+                xyz="-0.094939000879477097872 -2.5246608566260299064e-10 -0.0082499999999999969191"
+                rpy="0 -0 -3.141592653589793116" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+    <!-- </xacro:unless> -->
+
+
+    <!-- ................................ BACK CASTER WHEEL .................................. -->
+
+
+    <link name="caster_punch_bracket_2">
+        <visual>
+            <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
+                rpy="1.570796326794896336 -0 -1.1046173050810472067e-44" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/caster_punch_bracket.dae" />
+            </geometry>
+        </visual>
+        <inertial>
+            <origin xyz="0.006241639410146364135 0.00015992521741832878106 -0.008867539427835038901"
+                rpy="0 0 0" />
+            <mass value="0.014764349810725824544" />
+            <inertia ixx="1.6947747057761994951e-06" ixy="-1.7157250353294732119e-08"
+                ixz="5.8578195048420969427e-07" iyy="1.7276290017100658618e-06"
+                iyz="1.9205936593639116448e-08" izz="1.887839334913929401e-06" />
+        </inertial>
+    </link>
+
+    <link name="caster_wheel_2">
+        <visual>
+            <origin xyz="0 0 8.6736173798840354721e-19"
+                rpy="0 -8.2173010960533594582e-33 -5.4231385880628728748e-48" />
+            <geometry>
+                <mesh filename="package://revolt_description/meshes/caster_wheel.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 8.6736173798840354721e-19"
+                rpy="3.141592653589793116 -8.2173010960533594582e-33 -5.4231385880628728748e-48" />
+            <geometry>
+                <cylinder length="0.013" radius="0.0127945" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin
+                xyz="-4.7249388413420183081e-19 -2.1879547323420878759e-19 1.5277146050762926199e-18"
+                rpy="0 0 0" />
+            <mass value="0.004477188791594997018" />
+            <inertia ixx="2.6913415982105394464e-07" ixy="-5.748568691734761381e-56"
+                ixz="-1.4098060749829217299e-39" iyy="2.6913415982105405052e-07"
+                iyz="-1.1993576996138098093e-86" izz="4.4069974546829004994e-07" />
+        </inertial>
+    </link>
+
+    <!-- <xacro:if value="$(arg use_real_ros_control)">
+        <joint name="backcaster_wheel_joint" type="fixed">
+            <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
+                rpy="1.570796326794896336 -0 -3.4594555838018703633e-45" />
+            <parent link="caster_punch_bracket_2" />
+            <child link="caster_wheel_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="backcaster_rotation_joint" type="fixed">
+            <origin
+                xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0082499999999999969191"
+                rpy="0 -0 1.3216940769347106485e-16" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+    </xacro:if> -->
+
+    <!-- <xacro:unless value="$(arg use_real_ros_control)"> -->
+        <joint name="backcaster_wheel_joint" type="continuous">
+            <origin xyz="0.013499999999999998113 2.2538635793787358001e-18 -0.017000000000000001221"
+                rpy="1.570796326794896336 -0 -3.4594555838018703633e-45" />
+            <parent link="caster_punch_bracket_2" />
+            <child link="caster_wheel_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+
+        <joint name="backcaster_rotation_joint" type="continuous">
+            <origin
+                xyz="0.097009446841797339345 -2.4932854392201164728e-10 -0.0082499999999999969191"
+                rpy="0 -0 1.3216940769347106485e-16" />
+            <parent link="chassis" />
+            <child link="caster_punch_bracket_2" />
+            <axis xyz="0 0 1" />
+            <limit effort="1" velocity="20" />
+            <joint_properties friction="0.0" />
+        </joint>
+    <!-- </xacro:unless> -->
+
+
+    <!-- ros2_control -->
+    <!-- <xacro:if value="$(arg use_real_ros_control)">
+        <xacro:include filename="$(find ${package_name})/urdf/include/revolt_control.urdf.xacro" />
+    </xacro:if> -->
+
+</robot>
