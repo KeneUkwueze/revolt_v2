@@ -5,7 +5,7 @@
     <xacro:property name="package_name" value="revolt_description" />
     <xacro:property name="robot_name" value="revolt" />
 
-    <xacro:arg name="use_real_ros_control" default="false" />
+    <xacro:arg name="use_real_ros_control" default="True" />
 
 
 
