@@ -83,11 +83,13 @@ class DiffDriveAndino : public hardware_interface::SystemInterface {
     std::string left_wheel_name = "left_wheel";
     std::string right_wheel_name = "right_wheel";
     // Encoder parameters.
-    int enc_ticks_per_rev = 700;
+    int enc_ticks_per_rev = 3291;
     // Communication parameters.
     std::string serial_device = "/dev/ttyUSB0";
     int baud_rate = 57600;
     int timeout = 1000;
+
+    
   };
 
   // Configuration parameters.

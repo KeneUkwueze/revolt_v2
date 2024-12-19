@@ -106,8 +106,8 @@ def generate_launch_description():
     return LaunchDescription([
         include_revolt_description,
         revolt_control_timer,
-        # camera_arg,
-        # camera_timer,
+        camera_arg,
+        camera_timer,
         # rplidar_arg,
         # rplidar_timer,
     ])

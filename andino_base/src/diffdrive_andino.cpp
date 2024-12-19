@@ -85,8 +85,13 @@ hardware_interface::CallbackReturn DiffDriveAndino::on_configure(const rclcpp_li
   RCLCPP_INFO(logger_, "On configure...");
 
   // Set up communication with motor driver controller.
+  
   motor_driver_.Setup(config_.serial_device, config_.baud_rate, config_.timeout);
 
+ 
+
+  
+  
   RCLCPP_INFO(logger_, "Finished Configuration");
 
   return hardware_interface::CallbackReturn::SUCCESS;
@@ -157,6 +162,7 @@ hardware_interface::return_type DiffDriveAndino::read(const rclcpp::Time& /* tim
   const double right_pos_prev = right_wheel_.pos_;
   right_wheel_.pos_ = right_wheel_.Angle();
   right_wheel_.vel_ = (right_wheel_.pos_ - right_pos_prev) / delta_secs;
+  motor_driver_.SetPidValues(30, 10, 0, 100);
 
   return hardware_interface::return_type::OK;
 }
